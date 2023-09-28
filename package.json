@@ -1,0 +1,53 @@
+{
+  "name": "movie-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "postinstall": "prisma generate",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx prisma generate && nodemon --exec ts-node-dev index.ts",
+    "start": "npx prisma generate && ts-node index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": "18.x"
+  },
+  "dependencies": {
+    "@graphql-tools/graphql-file-loader": "^8.0.0",
+    "@graphql-tools/load": "^8.0.0",
+    "@graphql-yoga/plugin-defer-stream": "^2.0.4",
+    "@graphql-yoga/plugin-graphql-sse": "^2.0.4",
+    "@graphql-yoga/plugin-jwt": "^1.0.1",
+    "@prisma/client": "^5.3.1",
+    "@types/jsonwebtoken": "^9.0.3",
+    "@types/nodemailer": "^6.4.10",
+    "@whatwg-node/server-plugin-cookies": "^1.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "firebase-admin": "^11.10.1",
+    "graphql-shield": "^7.6.5",
+    "graphql-yoga": "^4.0.4",
+    "jsonwebtoken": "^9.0.2",
+    "nodemailer": "^6.9.5",
+    "nodemon": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.14",
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.6.2",
+    "@typescript-eslint/eslint-plugin": "^6.7.0",
+    "@typescript-eslint/parser": "^6.7.0",
+    "eslint": "^8.49.0",
+    "eslint-config-standard-with-typescript": "^39.0.0",
+    "eslint-plugin-n": "^16.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "prisma": "^5.3.1",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.2.2"
+  }
+}

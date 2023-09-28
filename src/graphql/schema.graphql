@@ -1,0 +1,80 @@
+scalar Date
+
+type Query {
+  hello: String!
+  login(email: String, password: String): User!
+  loginWithGoogle(idToken: String): User!
+  categories: [Category]!
+  year: [Year]!
+  newTrailers: [Movies]!
+  background: Movies!
+  getMoviesByCategory(category_slug: String): [Movies]!
+}
+
+type Mutation {
+  signup(input: UserInput): User!
+  logout: String!
+  sendOtp(email: String): Otp!
+  createCategory(name: String, slug: String): Category!
+  createYear(year: Int, slug: String): Year!
+  createMovie(input: MovieInput): Movies!
+}
+
+input MovieInput {
+  title: String!
+  seasons: Int
+  release: Date
+  forBackGround: Boolean
+  forNews: Boolean
+  imageBackground: String
+  description: String
+  category_slug: String
+}
+
+type Movies {
+  id: String
+  title: String
+  seasons: Int
+  status: Boolean
+  imageBackground: String
+  description: String
+  release: Date
+  category: Category
+  forBackGround: Boolean
+  forNews: Boolean
+  create_at: Date
+  update_at: Date
+}
+
+type Year {
+  id: String
+  year: Int
+  slug: String
+}
+
+type Category {
+  id: String
+  name: String
+  slug: String
+}
+
+type Otp {
+  code: String!
+}
+
+input UserInput {
+  email: String
+  name: String
+  password: String
+  confirmPassword: String
+  otp: String
+}
+
+type User {
+  id: String
+  name: String
+  email: String
+  password: String
+  access_token: String
+  avatar: String
+}
